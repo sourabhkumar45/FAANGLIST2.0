@@ -22,6 +22,12 @@ class Main {
             fast = fast.next.next;
             slow = slow.next;
         }
+        // if you want to return the second mid when size of 
+        // list is even
+        // if(fast.next==null)
+        // return slow;
+        // else
+        //     return slow.next;
         return slow;
     }
 
