@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class reverseList {
+public class ReverseList {
     public static class ListNode {
         int val = 0;
         ListNode next = null;
