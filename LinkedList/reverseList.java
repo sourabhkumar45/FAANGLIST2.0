@@ -1,7 +1,6 @@
-
 import java.util.*;
 
-class Main {
+public class reverseList {
     public static class ListNode {
         int val = 0;
         ListNode next = null;
@@ -11,37 +10,35 @@ class Main {
         }
     }
 
-    public static ListNode midNode(ListNode head) {
-    
-        if(head==null)
-        return null;
-        
-        ListNode slow = head, fast = head;
-        
-        while(fast.next!=null && fast.next.next!=null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-        // if you want to return the second mid when size of 
-        // list is even
-        // if(fast.next==null)
-        // return slow;
-        // else
-        //     return slow.next;
-        return slow;
+    public static ListNode reverse(ListNode head) {
+      
+      if(head==null || head.next==null) {
+          return head;
+      }
+      ListNode curr = head;
+      ListNode prev = null;
+      while(curr!=null) {
+          ListNode temp = curr.next;
+          curr.next = prev;
+          prev = curr;
+          curr = temp;
+      }
+        head = prev;
+        return head;
     }
 
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
+        scn.close();
         ListNode dummy = new ListNode(-1);
         ListNode prev = dummy;
         while (n-- > 0) {
             prev.next = new ListNode(scn.nextInt());
             prev = prev.next;
         }
-        scn.close();
-        ListNode head = midNode(dummy.next);
+
+        ListNode head = reverse(dummy.next);
         while (head != null) {
             System.out.print(head.val + " ");
             head = head.next;
