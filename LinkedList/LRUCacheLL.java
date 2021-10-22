@@ -73,14 +73,14 @@ public class LRUCacheLL {
                 }
             }
         }
-        private void display(Node head) {
-            Node t = head;
-            while(t!=null) {
-                //System.out.print(t.key+"."+t.val+"   ");
-                t = t.next;
-            }
-            System.out.println();
-        }
+        // private void display(Node head) {
+        //     Node t = head;
+        //     while(t!=null) {
+        //         //System.out.print(t.key+"."+t.val+"   ");
+        //         t = t.next;
+        //     }
+        //     System.out.println();
+        // }
         private Node remove(Node n) {
             n.prev.next = n.next;
             n.next.prev = n.prev;
